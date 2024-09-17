@@ -149,10 +149,10 @@ class _WaterIntakeHomePageState extends State<WaterIntakeHomePage> {
     return Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 12, 3, 52),
+          backgroundColor: const Color.fromARGB(66, 0, 0, 0),
           title: Text(
-            "Water Intake App",
-            style: TextStyle(color: Colors.grey),
+            "WATER INTAKE APP",
+            style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
         ),
@@ -164,7 +164,7 @@ class _WaterIntakeHomePageState extends State<WaterIntakeHomePage> {
                 Icon(
                   Icons.water_drop_outlined,
                   size: 110,
-                  color: Colors.grey,
+                  color: Colors.blue[200],
                 ),
                 SizedBox(
                   height: 10,
@@ -230,18 +230,30 @@ class _WaterIntakeHomePageState extends State<WaterIntakeHomePage> {
                       style: TextStyle(fontSize: 18),
                     )),
                 SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
-                Row(
-               children:[ ElevatedButton(
-                    onPressed: (){},
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      showResetConfirmationDialog();
+                    },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 248, 228, 10),
                         foregroundColor: Colors.black),
-                    child: Text(
-                      "RESET",
-                      style: TextStyle(fontSize: 18),
-                    )),]),
+                    child: Row(
+                      children: [
+                        Text(
+                          "RESET",
+                          style: TextStyle(fontSize: 18),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Icon(Icons.refresh)
+                      ],
+                    ),
+                  ),
+                ]),
               ],
             ),
           ),
